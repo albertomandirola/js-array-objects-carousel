@@ -42,7 +42,10 @@ btn_next.addEventListener('click', function(){
         console.log(document.getElementById('title').innerHTML = images[index].title);
     }
     else{
-        alert('immagini finite')
+        index = 0
+        document.getElementById('img').src = images[index].image
+        document.getElementById('title').innerHTML = images[index].title
+        document.getElementById('text').innerHTML = images[index].text
     }
 })
 console.log(index);
@@ -57,7 +60,10 @@ btn_prev.addEventListener('click', function(){
         console.log(document.getElementById('title').innerHTML = images[index].title);
     }
     else{
-        alert('immagini finite')
+        index = images.length-1
+        document.getElementById('img').src = images[index].image
+        document.getElementById('title').innerHTML = images[index].title
+        document.getElementById('text').innerHTML = images[index].text
     }
  
 })
