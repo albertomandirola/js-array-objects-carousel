@@ -1,3 +1,6 @@
+
+//SEZIONE VARIABILI ARREY E OGGETTI
+
 const images = [
     {
         image: 'img/01.webp',
@@ -21,3 +24,54 @@ const images = [
         text: 'Marvel\'s Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.',
     }
 ];
+
+//INIZIALIZZO LE DUE VARIABILI CHE PERMETTERANNO L'AZIONE DELLO SCROLL
+
+
+const btn_next = document.getElementById('btnNext')
+const btn_prev = document.getElementById('btnPrev')
+let index = 0
+
+btn_next.addEventListener('click', function(){
+    if(index < images.length-1){
+        index++;
+        console.log(index);
+        document.getElementById('img').src = images[index].image
+        document.getElementById('title').innerHTML = images[index].title
+        document.getElementById('text').innerHTML = images[index].text
+        console.log(document.getElementById('title').innerHTML = images[index].title);
+    }
+    else{
+        alert('immagini finite')
+    }
+})
+console.log(index);
+
+btn_prev.addEventListener('click', function(){
+    if(index > 0){
+        index--;
+        console.log(index);
+        document.getElementById('img').src = images[index].image
+        document.getElementById('title').innerHTML = images[index].title
+        document.getElementById('text').innerHTML = images[index].text
+        console.log(document.getElementById('title').innerHTML = images[index].title);
+    }
+    else{
+        alert('immagini finite')
+    }
+ 
+})
+
+/* if(index > 0){
+    index--;
+    console.log(index);
+    document.getElementById('img').src = images[index].image
+    document.getElementById('title').innerHTML = images[index].title
+    document.getElementById('text').innerHTML = images[index].text
+    console.log(document.getElementById('title').innerHTML = images[index].title);
+}
+else{
+    alert('immagini finite')
+}
+ */
+
