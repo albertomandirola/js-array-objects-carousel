@@ -1,4 +1,9 @@
-
+//funzione che inserisce i dati dell oggetto
+function insertByIndex(){
+    document.getElementById('img').src = images[index].image
+    document.getElementById('title').innerHTML = images[index].title
+    document.getElementById('text').innerHTML = images[index].text
+}
 //SEZIONE VARIABILI ARREY E OGGETTI
 
 const images = [
@@ -35,49 +40,25 @@ let index = 0
 btn_next.addEventListener('click', function(){
     if(index < images.length-1){
         index++;
-        console.log(index);
-        document.getElementById('img').src = images[index].image
-        document.getElementById('title').innerHTML = images[index].title
-        document.getElementById('text').innerHTML = images[index].text
-        console.log(document.getElementById('title').innerHTML = images[index].title);
+        insertByIndex()
     }
     else{
         index = 0
-        document.getElementById('img').src = images[index].image
-        document.getElementById('title').innerHTML = images[index].title
-        document.getElementById('text').innerHTML = images[index].text
+        insertByIndex()
     }
 })
-console.log(index);
 
 btn_prev.addEventListener('click', function(){
     if(index > 0){
         index--;
-        console.log(index);
-        document.getElementById('img').src = images[index].image
-        document.getElementById('title').innerHTML = images[index].title
-        document.getElementById('text').innerHTML = images[index].text
-        console.log(document.getElementById('title').innerHTML = images[index].title);
+        insertByIndex()
     }
     else{
         index = images.length-1
-        document.getElementById('img').src = images[index].image
-        document.getElementById('title').innerHTML = images[index].title
-        document.getElementById('text').innerHTML = images[index].text
+        insertByIndex()
     }
  
 })
 
-/* if(index > 0){
-    index--;
-    console.log(index);
-    document.getElementById('img').src = images[index].image
-    document.getElementById('title').innerHTML = images[index].title
-    document.getElementById('text').innerHTML = images[index].text
-    console.log(document.getElementById('title').innerHTML = images[index].title);
-}
-else{
-    alert('immagini finite')
-}
- */
+
 
